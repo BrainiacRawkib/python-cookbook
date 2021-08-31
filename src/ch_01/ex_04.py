@@ -1,4 +1,5 @@
 import heapq
+from operator import itemgetter
 
 
 nums = [1, 8, 2, 23, 7, -4, 18, 23, 42, 37, 2]
@@ -15,6 +16,7 @@ portfolio = [
 
 
 cheap = heapq.nsmallest(3, portfolio, key=lambda s: s['price'])
+cheap2 = heapq.nsmallest(3, portfolio, key=itemgetter('price'))
 expensive = heapq.nlargest(3, portfolio, key=lambda s: s['price'])
 
 
@@ -24,7 +26,8 @@ heapq.heapify(heap)
 if __name__ == '__main__':
     print(heapq.nlargest(3, nums))
     print(heapq.nsmallest(3, nums))
-    print(cheap)
+    print('cheap-->', cheap)
+    print('cheap2-->', cheap2)
     print(expensive)
     print(heap)
     print(heapq.heappop(heap))

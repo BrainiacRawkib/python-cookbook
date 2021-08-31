@@ -1,3 +1,4 @@
+# mapping keys to multiple values in a dictionary
 from collections import defaultdict
 
 
@@ -12,11 +13,11 @@ s['a'].add(2)
 s['b'].add(4)
 
 # not cool
-d = {}
-for key, value in d:
-    if key not in d:
-        d[key] = []
-    d[key].append(value)
+# d = {}
+# for key, value in d:
+#     if key not in d:
+#         d[key] = []
+#     d[key].append(value)
 
 # cool
 l = defaultdict(list)
@@ -26,3 +27,4 @@ for k, v in l:
 if __name__ == '__main__':
     print(d)
     print(s)
+    print(l)
