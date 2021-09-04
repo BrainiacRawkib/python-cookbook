@@ -12,5 +12,5 @@ if __name__ == "__main__":
     print(x)
     print(y)
     print(_, shares, price, _)
-    print('*' * 10 + 'unpacking' + '*' * 10)
+    print(format('unpacking', '*^30s'))
     print(a, b, c, d, e)

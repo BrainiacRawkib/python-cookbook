@@ -21,6 +21,7 @@ if __name__ == '__main__':
     print(a.step)
     print(items[2:4])
     print(b.indices(len(s)))
+    print(b)
     print('unpacking--->', *b.indices(len(s)))
     for i in range(*b.indices(len(s))):
         print(s[i])
