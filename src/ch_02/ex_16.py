@@ -1,5 +1,4 @@
 # reformatting text to a fixed number of columns
-import os
 import textwrap
 
 s = "Look into my eyes, look into my eyes, the eyes, the eyes, \
