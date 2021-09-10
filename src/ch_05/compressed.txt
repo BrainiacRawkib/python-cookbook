@@ -1,0 +1,2 @@
+Gzip compression working on an existing
+file opened.
