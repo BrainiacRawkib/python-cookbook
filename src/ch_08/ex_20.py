@@ -1,0 +1,34 @@
+# calling a method on an object given the name as a string
+import math
+import operator
+
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __repr__(self):
+        return 'Point({!r:},{!r:})'.format(self.x, self.y)
+
+    def distance(self, x, y):
+        return math.hypot(self.x - x, self.y - y)
+
+
+if __name__ == '__main__':
+    p = Point(2, 3)
+    d = getattr(p, 'distance')(0, 0)  # Calls p.distance(0, 0)
+    print(round(d, 2))
+
+    # alternative approach is to use operator.methodcaller()
+    print(operator.methodcaller('distance', 0, 0)(p))
+    points = [
+        Point(1, 2),
+        Point(3, 0),
+        Point(10, -3),
+        Point(-5, -7),
+        Point(-1, 8),
+        Point(3, 2)
+    ]
+    # Sort by distance from origin (0, 0)
+    print(points.sort(key=operator.methodcaller('distance', 0, 0)))
